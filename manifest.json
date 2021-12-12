@@ -1,6 +1,6 @@
 ﻿{
   "Name": "ForcePhysics",
-	"Description": "Enables physics for npcs who are in the same room",
+	"Description": "Enables physics for npcs who are visible (e.g in the same room)",
 	"Author": "fks",
 	"ModVersion": "1.0",
   "GameVersion": "10.0"
