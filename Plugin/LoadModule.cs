@@ -56,6 +56,7 @@ namespace ForcePhysics
                 {
                     Logger.Detailed(String.Format("Adding ForcePhysicsModule to {0} ({1}, {2})", creature.name, creature.creatureId, creature.GetInstanceID()));
                     var component = creature.gameObject.AddComponent<ForcePhysicsModule>();
+                    component.force_enabled = _enabled;
                     creatureList.AddLast(creature);
                     creature.OnDespawnEvent += delegate {
                         GameObject.Destroy(component);
