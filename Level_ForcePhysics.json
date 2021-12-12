@@ -1,0 +1,19 @@
+{
+  "$type": "ThunderRoad.LevelData, Assembly-CSharp",
+  "id": "Master",
+  "version": 3,
+  "modes": [
+    {
+      "name": "Default",
+      "modules": 
+	  [
+        {
+          "$type": "ForcePhysics.LoadModule, ForcePhysics",
+          "mod_name": "ForcePhysics",
+          "mod_version": "1.0",
+          "logger_level": "Basic"
+        }
+      ]
+    }
+  ]
+}
