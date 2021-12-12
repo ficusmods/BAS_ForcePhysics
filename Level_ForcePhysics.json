@@ -11,7 +11,9 @@
           "$type": "ForcePhysics.LoadModule, ForcePhysics",
           "mod_name": "ForcePhysics",
           "mod_version": "1.0",
-          "logger_level": "Basic"
+          "logger_level": "Basic",
+          
+          "enabled": true
         }
       ]
     }
