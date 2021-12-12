@@ -20,7 +20,6 @@ namespace ForcePhysics
         {
             Ragdoll ragdoll = gameObject.GetComponentInChildren<Ragdoll>();
             this.creature = ragdoll.creature;
-            this.creature.SetFaction(UnityEngine.Random.Range(0, 5));
         }
 
         private void LateUpdate()
