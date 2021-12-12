@@ -24,19 +24,11 @@ namespace ForcePhysics
 
         private void LateUpdate()
         {
-            if (force_enabled && !this.creature.ragdoll.creature.isKilled)
+            if (force_enabled && !this.creature.ragdoll.creature.isKilled && !this.creature.hidden)
             {
-
-                if (!this.creature.hidden)
-                {
-                    Logger.Detailed("Forcing physics for {0} ({1}, {2})", creature.name, creature.creatureId, creature.GetInstanceID());
-                    this.creature.ragdoll.AddPhysicToggleModifier(this);
-                }
-                else
-                {
-                    Logger.Detailed("Not forcing physics for {0} ({1}, {2})", creature.name, creature.creatureId, creature.GetInstanceID());
-                    this.creature.ragdoll.RemovePhysicToggleModifier(this);
-                }
+                Logger.Detailed("Forcing physics for {0} ({1}, {2})", creature.name, creature.creatureId, creature.GetInstanceID());
+                this.creature.ragdoll.AddPhysicToggleModifier(this);
+                
             }
             else
             {
