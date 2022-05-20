@@ -13,7 +13,8 @@
           "mod_version": "1.0",
           "logger_level": "Basic",
           
-          "enabled": true
+          "Enabled": true,
+          "WaitFrames": 5
         }
       ]
     }

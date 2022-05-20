@@ -17,27 +17,17 @@ namespace ForcePhysics
         public string mod_name = "UnnamedMod";
         public string logger_level = "Basic";
 
-        private bool _enabled = true;
-        public bool enabled
+        public bool Enabled
         {
-            get
-            {
-                return _enabled;
-            }
-            set
-            {
-                _enabled = value;
-                foreach (Creature creature in creatureList)
-                {
-                    if (creature.gameObject.TryGetComponent<ForcePhysicsModule>(out ForcePhysicsModule module))
-                    {
-                        module.force_enabled = _enabled;
-                    }
-                }
-            }
+            get => Config.Enabled;
+            set => Config.Enabled = value;
         }
 
-        LinkedList<Creature> creatureList = new LinkedList<Creature>();
+        public int WaitFrames
+        {
+            get => Config.WaitFrames;
+            set => Config.WaitFrames = value > 0 ? value : 0;
+        }
 
         public override IEnumerator OnLoadCoroutine()
         {
@@ -56,11 +46,8 @@ namespace ForcePhysics
                 {
                     Logger.Detailed(String.Format("Adding ForcePhysicsModule to {0} ({1}, {2})", creature.name, creature.creatureId, creature.GetInstanceID()));
                     var component = creature.gameObject.AddComponent<ForcePhysicsModule>();
-                    component.force_enabled = _enabled;
-                    creatureList.AddLast(creature);
                     creature.OnDespawnEvent += delegate {
                         GameObject.Destroy(component);
-                        creatureList.Remove(creature);
                     };
                 }
             }
